@@ -40,8 +40,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=imayou123_maven-monorepo_app1 -Dsonar.projectName='imayou123_maven-monorepo_app1' # Add your project key and name
-        with:
-          projectBaseDir: apps/App1/ # the path to your project from the monorepo root directory  (TO BE CONFIRMED IF NEEDED OR IF PROJECT NAME IS ENOUGH)
   sonarQubeScan2:
     name: sonarQubeScan2
     runs-on: ubuntu-latest
@@ -71,6 +69,4 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=imayou123_maven-monorepo_app2 -Dsonar.projectName='imayou123_maven-monorepo_app2' # Add your project key and name
-        with:
-          projectBaseDir: apps/App2/ # the path to your project from the monorepo root directory  (TO BE CONFIRMED IF NEEDED OR IF PROJECT NAME IS ENOUGH)
   # Add other scan jobs if you wish to scan more projects in the monorepo   
