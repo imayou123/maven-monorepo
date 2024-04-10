@@ -9,6 +9,7 @@ on:
       - 'apps/App2/**'
   pull_request:
     types: [opened, synchronize, reopened]
+  workflow_dispatch:
 
 jobs:
   sonarQubeScan1:
@@ -39,7 +40,7 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=imayou123_maven-monorepo_app1 -Dsonar.projectName='imayou123_maven-monorepo_app1' # Add your project key and name
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=imayou123_maven-monorepo_app1 -Dsonar.projectName='imayou123_maven-monorepo_app1' -Dsonar.projectBaseDir="apps/App1/" # Add your project key, name and path
   sonarQubeScan2:
     name: sonarQubeScan2
     runs-on: ubuntu-latest
@@ -68,5 +69,4 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN2 }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=imayou123_maven-monorepo_app2 -Dsonar.projectName='imayou123_maven-monorepo_app2' # Add your project key and name
-  # Add other scan jobs if you wish to scan more projects in the monorepo   
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=imayou123_maven-monorepo_app2 -Dsonar.projectName='imayou123_maven-monorepo_app2' -Dsonar.projectBaseDir="apps/App1/" # Add your project key, name and path
