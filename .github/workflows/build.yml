@@ -69,4 +69,4 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN2 }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=imayou123_maven-monorepo_app2 -Dsonar.projectName='imayou123_maven-monorepo_app2' -Dsonar.projectBaseDir="apps/App1/" # Add your project key, name and path
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=imayou123_maven-monorepo_app2 -Dsonar.projectName='imayou123_maven-monorepo_app2' -Dsonar.projectBaseDir="apps/App2/" # Add your project key, name and path
