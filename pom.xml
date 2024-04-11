@@ -17,7 +17,6 @@
     </properties>
 
     <modules>
-	    <module>libs</module>
 	    <module>apps</module>
     </modules>
 
