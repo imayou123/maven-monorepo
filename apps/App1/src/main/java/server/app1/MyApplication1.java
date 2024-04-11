@@ -1,7 +1,7 @@
 package server.app1;
 
 public class MyApplication1 {
-    var test='test';
+    String test='test';
 }   
 
 //import com.ericbruno.library1.MyLibrary1;
