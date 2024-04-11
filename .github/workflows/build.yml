@@ -40,7 +40,8 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.sources="apps/App1/" -Dsonar.projectKey=imayou123_maven-monorepo_app1 -Dsonar.projectName='imayou123_maven-monorepo_app1'  # Add your project key, name and path
+        working-directory: apps/App1/
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=imayou123_maven-monorepo_app1 -Dsonar.projectName='imayou123_maven-monorepo_app1'  # Add your project key, name and path
   sonarQubeScan2:
     name: sonarQubeScan2
     runs-on: ubuntu-latest
