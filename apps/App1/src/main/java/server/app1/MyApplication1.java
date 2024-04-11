@@ -1,12 +1,16 @@
 package server.app1;
 
-import com.ericbruno.library1.MyLibrary1;
-import com.ericbruno.library1.MyLibrary1Impl;
+public class MyApplication1 {
+    var test='test';
+}   
+
+//import com.ericbruno.library1.MyLibrary1;
+//import com.ericbruno.library1.MyLibrary1Impl;
 
 /**
  * @author ebruno
  */
-public class MyApplication1 {
+/*public class MyApplication1 {
     private MyLibrary1 lib1 = MyLibrary1Impl.getInstance();
     
     public static void main(String[] args) {
@@ -29,3 +33,4 @@ public class MyApplication1 {
         System.out.println("[App1]: "+s);
     }
 }
+*/
